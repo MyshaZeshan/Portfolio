@@ -12,7 +12,7 @@ const CanvasLoader = () => {
         justifyContent:'center',flexDirection:'column'
     }}
     >
-        <span ClassName="canvas-loader"/>
+        <span className="canvas-loader"/>
         <p style={{fontsize:14,color:'#F1F1F1',fontWeight:800,marginTop:40}}>
             {progress != 0 ? `${progress.toFixed(2)}%`: 'Loading...'}
         </p>

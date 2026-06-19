@@ -50,10 +50,7 @@ body {
     .spacegrotesk-font {
   font-family: 'Space Grotesk', sans-serif;
 }
-    .fading-text {
-  -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
-  mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
-}
+  
   .btn-ping {
     @apply animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75;
   }
@@ -61,8 +58,10 @@ body {
   .btn-ping_dot {
     @apply relative inline-flex rounded-full h-3 w-3 bg-green-500;
   }
+  
 
-  .hero_tag {
+
+ .hero_tag {
     @apply text-center xl:text-6xl md:text-5xl sm:text-4xl text-3xl font-black leading-normal;
   }
 
