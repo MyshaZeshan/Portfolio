@@ -1,11 +1,16 @@
-import { SpotLight } from '@react-three/drei'
+import { Center, SpotLight } from '@react-three/drei'
 import React, { useState } from 'react'
 import { myProjects } from '../constants/constant'
+import { Canvas } from '@react-three/fiber';
+import { Suspense } from 'react';
+import CanvasLoader from '../components/CanvasLoader';
+import Computer from '../components/Computer';
+import AnimatedComputer from '../components/Animate.jsx'
 
 const Projects = () => {
-    const currentProject = myProjects[0];
     const projectCount = myProjects.length;
     const [selectedProjectIndex,setSelectedProjectIndex] = useState(0);
+    const currentProject = myProjects[selectedProjectIndex];
     const handleNavigation = (direction) => {
         setSelectedProjectIndex((prevIndex)=>{
             if(direction=='previous')
@@ -60,6 +65,18 @@ const Projects = () => {
                         <img src = "/assets/right-arrow.png" alt="right-arrow" className='w-4 h-4'/>
                     </button>
                 </div>
+            </div>
+
+            <div className='border border-black bg-zinc-900 rounded-lg h-96 md:h-full'>
+                <Canvas>
+                    <ambientLight intensity={1}/>
+                    <directionalLight position={10,10,5}/> 
+                    <Center>
+                        <Suspense fallback={<CanvasLoader/>}>
+                        <AnimatedComputer/>
+                        </Suspense>
+                    </Center>
+                </Canvas>
             </div>
         </div>
 

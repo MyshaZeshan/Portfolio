@@ -7,37 +7,38 @@ const EarthModel = () => {
     const EarthRef = useRef();
     const cloudRef = useRef();
 
-    const [dayMap, normalMap, specularMap, cloudMap] = useLoader(TextureLoader, 
-        ["/public/textures/EarthT/2k_earth_normal_map.tif",
-        "/public/textures/EarthT/2k_earth_clouds.jpg",
-        "/public/textures/EarthT/2k_earth_specular_map.tif",
-        "/public/textures/EarthT/earth_atmos_2048.jpg"]);
+    const [normalMap, cloudMap, specularMap, dayMap] = useLoader(TextureLoader, 
+        ["/textures/EarthT/2k_earth_normal_map.jpg",
+        "/textures/EarthT/2k_earth_clouds.jpg",
+        "/textures/EarthT/2k_earth_specular_map.jpg",
+        "/textures/EarthT/earth_atmos_2048.jpg"]);
 
         useFrame(() => {
-            earthRef.current.rotation.y += 0.0015;
+            EarthRef.current.rotation.y += 0.0015;
             cloudRef.current.rotation.y += 0.0018;
 });
 
 return(
     <group>
-        <Mesh ref={earthRef}>
-            <SphereGeometry args={[2, 64, 64]}/>
-            <MeshStandardMaterial
+        <mesh ref={EarthRef}>
+            <sphereGeometry args={[3.5, 74, 74]}/>
+            <meshPhongMaterial
             map={dayMap}
             normalMap={normalMap}
-            specularMap={specularMap}
-            shininess={15}
+            roughnessMap = {specularMap}
+            roughness={0.4}
+            metalness={0.1}
             />
-        </Mesh>
+        </mesh>
 
-        <Mesh ref={cloudRef}>
-            <SphereGeometry args={[2.05, 64, 64]}/>
-            <MeshStandardMaterial
+        <mesh ref={cloudRef}>
+            <sphereGeometry args={[3.6, 74, 74]}/>
+            <meshPhongMaterial
             map={cloudMap}
             transparent={true}
-            opacity={0.35}
+            opacity={0.4}
             />
-        </Mesh>
+        </mesh>
     </group>
 );
 };
