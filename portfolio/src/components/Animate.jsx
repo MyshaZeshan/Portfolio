@@ -1,61 +1,40 @@
-import React, { Suspense, useRef } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
-import { Center } from '@react-three/drei';
-import Computer from './Computer';
-import { useEffect } from 'react';
+import React, { useRef } from "react";
+import { useFrame } from "@react-three/fiber";
+import Computer from "./Computer";
 
-const Animate = () => {
-  const modelRef = useRef();
-  const isDragging = useRef(false);
-  const previousX = useRef(0);
-  const dragRotationY = useRef(0);
-  const mouse = useRef({ x: 0, y: 0 });
+const AnimatedComputer = () => {
+  const group = useRef();
 
-  useFrame(() => {
-    // hover tilt (mouse position based) + drag rotation
-    modelRef.current.rotation.y = mouse.current.x * 0.15 + dragRotationY.current;
-    modelRef.current.rotation.x = mouse.current.y * 0.1;
+  const targetRotation = useRef({
+    x: 0,
+    y: 0,
   });
 
-  const handlePointerDown = (e) => {
-    isDragging.current = true;
-    previousX.current = e.clientX;
-  };
-
   const handlePointerMove = (e) => {
-    // normalize mouse position to -1 to 1 range
-    mouse.current.x = (e.clientX / window.innerWidth) * 2 - 1;
-    mouse.current.y = (e.clientY / window.innerHeight) * 2 - 1;
-
-    if (!isDragging.current) return;
-    const deltaX = e.clientX - previousX.current;
-    dragRotationY.current += deltaX * 0.005;
-    previousX.current = e.clientX;
+    targetRotation.current.x = -e.pointer.y * 0.12;
+    targetRotation.current.y = e.pointer.x * 0.18;
   };
 
-  const handlePointerUp = () => {
-    isDragging.current = false;
-  };
+  useFrame(() => {
+    if (!group.current) return;
 
-  useEffect(() => {
-    window.addEventListener("pointerdown", handlePointerDown);
-    window.addEventListener("pointermove", handlePointerMove);
-    window.addEventListener("pointerup", handlePointerUp);
+    group.current.rotation.x +=
+      (targetRotation.current.x - group.current.rotation.x) * 0.08;
 
-    return () => {
-      window.removeEventListener("pointerdown", handlePointerDown);
-      window.removeEventListener("pointermove", handlePointerMove);
-      window.removeEventListener("pointerup", handlePointerUp);
-    };
-  }, []);
+    group.current.rotation.y +=
+      (targetRotation.current.y - group.current.rotation.y) * 0.08;
+  });
 
   return (
-    <group ref={modelRef} scale={1.5} position={[0, -1.2, 0]}>
+    <group
+      ref={group}
+      scale={1.1}
+      position={[0.5, 0, 0]}
+      onPointerMove={handlePointerMove}
+    >
       <Computer />
     </group>
   );
 };
 
-export default Animate;
-
-
+export default AnimatedComputer;

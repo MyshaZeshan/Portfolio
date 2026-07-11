@@ -21,7 +21,7 @@ const EarthModel = () => {
 return(
     <group>
         <mesh ref={EarthRef}>
-            <sphereGeometry args={[3.5, 74, 74]}/>
+            <sphereGeometry args={[4, 74, 74]}/>
             <meshPhongMaterial
             map={dayMap}
             normalMap={normalMap}
@@ -32,7 +32,7 @@ return(
         </mesh>
 
         <mesh ref={cloudRef}>
-            <sphereGeometry args={[3.6, 74, 74]}/>
+            <sphereGeometry args={[4.1, 74, 74]}/>
             <meshPhongMaterial
             map={cloudMap}
             transparent={true}

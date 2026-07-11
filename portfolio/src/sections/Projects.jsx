@@ -67,17 +67,21 @@ const Projects = () => {
                 </div>
             </div>
 
-            <div className='border border-black bg-zinc-900 rounded-lg h-96 md:h-full'>
-                <Canvas>
-                    <ambientLight intensity={1}/>
-                    <directionalLight position={10,10,5}/> 
-                    <Center>
-                        <Suspense fallback={<CanvasLoader/>}>
-                        <AnimatedComputer/>
-                        </Suspense>
-                    </Center>
-                </Canvas>
-            </div>
+            <div className="border border-black bg-zinc-900 rounded-lg h-96 md:h-full">
+            <Canvas
+            dpr={[1, 1.5]}
+            camera={{ position: [0, 0, 5], fov: 45 }}
+            >
+            <ambientLight intensity={1} />
+            <directionalLight position={[10, 10, 5]} intensity={1.5} />
+
+            <Suspense fallback={<CanvasLoader />}>
+                <Center>
+                <AnimatedComputer />
+                </Center>
+            </Suspense>
+            </Canvas>
+        </div>
         </div>
 
     </section>

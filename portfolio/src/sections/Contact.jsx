@@ -35,13 +35,13 @@ const Contact = () => {
 
     }
   return (
-    <section className='c-space my-20'>
+    <section className='c-space my-10'>
         <h3 className='head-text text-white'>
             Contact Me
         </h3>
-        <div className='relative min-h-screen flex items-center justify-center flex-col'>
-            <img src= '/assets/terminal.png' alt = 'terminal background' className='absolute inset-0 min-h-screen'/>
-            <div className=' contact-container'>
+        <div className='relative min-h-screen flex items-center justify-center flex-col '>
+            <img src= '/assets/terminal.png' alt = 'terminal background' className='absolute w-full h-full lg:object-contain '/>
+            <div className=' contact-container '>
                 <h3 className='head-text text-white'>
                     let's talk
                 </h3>
@@ -63,7 +63,7 @@ const Contact = () => {
                         <span className='field label text-gray-400  font-medium text-lg'>Your Message</span>
                         <textarea type='text' name='message' value={form.message} onChange={handleChange} required rows={5} className="field-input" placeholder="Hi I'm interested in..."/>
                     </label>
-                    
+
                     <button className='field-btn' type='submit' disabled = {loading}>
                         {loading ? 'Sending...' : 'Send Message'}
                         <img src="/assets/arrow-up.png" alt="arrow-up" className='field-btn_arrow'/>

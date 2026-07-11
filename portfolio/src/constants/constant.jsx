@@ -1,10 +1,10 @@
 export const myProjects = [
   {
-    title: 'Podcastr - AI Podcast Platform',
-    desc: 'Podcastr is a revolutionary Software-as-a-Service platform that transforms the way podcasts are created. With advanced AI-powered features like text-to-multiple-voices functionality, it allows creators to generate diverse voiceovers from a single text input.',
+    title: 'Resume Analyzer',
+    desc: 'AI-powered resume analysis tool that matches resumes against job descriptions and returns actionable feedback.',
     subdesc:
-      'Built as a unique Software-as-a-Service app with Next.js 14, Tailwind CSS, TypeScript, Framer Motion and Convex, Podcastr is designed for optimal performance and scalability.',
-    href: 'https://www.youtube.com/watch?v=zfAb95tJvZQ',
+      'Developed a Spring Boot REST API enabling PDF resume uploads, extracting text via Apache PDFBox and persisting data in MySQL using JPA. Integrated Ollama (LLaMA 3.2) to analyze resumes against job descriptions, returning match score, matching skills, missing skills, and recommendations. Containerized the full stack with Docker Compose, orchestrating Spring Boot, MySQL, and Ollama for seamless deployment.',
+    href: 'https://github.com/MyshaZeshan/Resume-Analyzer.git',
     texture: '/textures/project/project1.mp4',
     logo: '/assets/project-logo1.png',
     logoStyle: {
