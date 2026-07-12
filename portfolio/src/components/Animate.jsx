@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
-import Computer from "./Computer";
+import Computer from "./Computer.jsx";
 
 const AnimatedComputer = () => {
   const group = useRef();

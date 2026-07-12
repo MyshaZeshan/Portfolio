@@ -1,16 +1,27 @@
 import React from 'react'
 import { useState } from 'react'
-const NavItems=()=>{
-    return(
-        <ul className='nav-ul'>
-            {["Home","About","Projects","Contact"].map((item,index)=>(
-                <li key={index} className="nav-li">
-                    <a href="/" className="nav-li_a" onClick={()=>{}}>{item}</a>
-                </li>
-            ))}
-        </ul>
-    )
-}
+const NavItems = () => {
+  const navLinks = [
+    { name: "Home", href: "#home" },
+    { name: "About", href: "#about" },
+    { name: "Projects", href: "#projects" },
+    { name: "Contact", href: "#contact" },
+  ];
+
+  return (
+    <nav>
+      <ul className="nav-ul">
+        {navLinks.map((link) => (
+          <li key={link.name} className="nav-li">
+            <a href={link.href} className="nav-li_a">
+              {link.name}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
+};
 const Navbar = () => {
     const[isOpen, setisOpen] = useState(false)
     const toggleMenu = ()=>setisOpen((prevIsOpen)=>!prevIsOpen)

@@ -36,7 +36,7 @@ const Contact = () => {
     }
   return (
     <section className='c-space my-10'>
-        <h3 className='head-text text-white'>
+        <h3 className='head-text text-white ' id='contact'>
             Contact Me
         </h3>
         <div className='relative min-h-screen flex items-center justify-center flex-col '>

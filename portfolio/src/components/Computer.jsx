@@ -11,7 +11,7 @@ import { useGLTF, useAnimations } from '@react-three/drei'
 
 const Computer =(props)=> {
   const group = useRef()
-  const { nodes, materials, animations } = useGLTF('models/Computer/scene.gltf')
+  const { nodes, materials, animations } = useGLTF('/models/Computer/scene.gltf')
   const { actions } = useAnimations(animations, group)
   return (
     <group ref={group} {...props} dispose={null}>
@@ -191,5 +191,5 @@ const Computer =(props)=> {
   )
 }
 
-useGLTF.preload('models/Computer/scene.gltf')
+useGLTF.preload('/models/Computer/scene.gltf')
 export default Computer;

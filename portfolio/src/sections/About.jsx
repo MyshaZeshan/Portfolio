@@ -15,7 +15,7 @@ const About = () => {
         },2000)
     }
   return (
-    <section className="w-full h-full mx-auto bg-black px-5 sm:px-10 lg:px-45 mt-10 mb-10">
+    <section className="w-full h-full mx-auto bg-black px-5 sm:px-10 lg:px-45 mt-10 mb-10" id='about'>
         <div className="
             grid
             xl:grid-cols-3

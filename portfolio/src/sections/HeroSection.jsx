@@ -17,16 +17,22 @@ const HeroSection = () => {
     const isTablet = useMediaQuery({minWidth: 769, maxWidth: 1024})
     const sizes = calculateSizes(small, isMobile, isTablet)
   return (
-    <section className='min-h-screen w-full flex flex-col relative'>
+    <section className='min-h-screen w-full flex flex-col relative' id="home">
+        <img src="/assets/background.png" alt="background" className='absolute inset-0 w-full h-full object-cover z-0'/>
         {/* Left Content */}
-            <div className="md:hidden w-full mx-auto flex flex-col sm:mt-36 mt-15 mb-0 c-space ">
-            <p className="orbitron-font  text-[clamp(70px,8vw,190px)] font-bold opacity-70 text-center tracking-widest text-white text-tight">
+        <div className="md:hidden w-full mx-auto flex flex-col sm:mt-36 mt-15 mb-0 c-space z-10">
+            <p className="orbitron-font  text-[clamp(70px,8vw,190px)] font-bold opacity-70 text-center tracking-widest text-purple-300 text-tight">
             HI I'M MYSHA
             </p>
 
             <p className="text-center sm:mt-0 text-white/70 text-lg tracking-wide font-light">
             Full Stack Developer & CS Student
             </p>
+            <a href="/assets/Mysha.pdf" target="_blank" rel="noopener noreferrer">
+            <button className="w-32 m-40 bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded-full mt-2 ">
+                Resume
+            </button>
+            </a>
         </div>
 
         {/* Tablet & Desktop */}
@@ -41,7 +47,13 @@ const HeroSection = () => {
             <p className="text-white/70 text-2xl mt-4">
                 Full Stack Developer & CS Student
             </p>
+            <a href="/assets/Mysha.pdf" target="_blank" rel="noopener nonreferrer">
+            <button className="w-32 bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded-full mt-4 ">
+                Resume
+            </button>
+            </a>
             </div>
+            
         </div>
 
         <div className="w-full h-full absolute inset-0">
