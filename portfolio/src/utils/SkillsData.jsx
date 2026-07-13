@@ -5,23 +5,23 @@ export const skills = [
     subtitle: "Responsive & Interactive UI",
     level: 90,
     color: "cyan",
-    tags: ["React", "Tailwind", "JavaScript"]
+    tags: ["React", "Tailwind", "JavaScript", "CSS", "HTML"]
   },
   {
     id: "02",
-    title: "Backend Development",
+    title: "Flask Development",
     subtitle: "REST APIs & Databases",
-    level: 85,
+    level: 70,
     color: "blue",
-    tags: ["Spring Boot", "Java", "MySQL"]
+    tags: ["Flask", "Python", "SQLAlchemy"]
   },
   {
     id: "03",
-    title: "AI & Machine Learning",
-    subtitle: "Intelligent Applications",
+    title: "Java Development",
+    subtitle: "Backend Services & APIs",
     level: 80,
     color: "purple",
-    tags: ["Python", "TensorFlow", "Scikit"]
+    tags: ["Java", "Spring Boot", "MySQL"]
   },
   {
     id: "04",
@@ -29,7 +29,7 @@ export const skills = [
     subtitle: "Clean User Experiences",
     level: 88,
     color: "pink",
-    tags: ["Figma", "Photoshop", "Canva"]
+    tags: ["Figma", "Photoshop", "Canva",]
   },
   {
     id: "05",
@@ -43,7 +43,7 @@ export const skills = [
     id: "06",
     title: "DevOps",
     subtitle: "Deployment & Automation",
-    level: 72,
+    level: 62,
     color: "green",
     tags: ["Docker", "Git", "Linux"]
   },
@@ -61,6 +61,6 @@ export const skills = [
     subtitle: "Algorithms & DSA",
     level: 84,
     color: "red",
-    tags: ["C++", "Java", "LeetCode"]
+    tags: ["C++", "LeetCode"]
   }
 ];

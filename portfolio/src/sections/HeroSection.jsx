@@ -8,6 +8,7 @@ import { AmbientLight, DirectionalLight } from 'three';
 import {useMediaQuery} from 'react-responsive'
 import { calculateSizes } from '../utils/CalculatrSizes.jsx';
 import {Stars} from '@react-three/drei'
+import InteractiveStars from '../components/InteractiveStars.jsx';
 
 
 const HeroSection = () => {
@@ -18,53 +19,61 @@ const HeroSection = () => {
     const sizes = calculateSizes(small, isMobile, isTablet)
   return (
     <section className='min-h-screen w-full flex flex-col relative' id="home">
-        <img src="/assets/background.png" alt="background" className='absolute inset-0 w-full h-full object-cover z-0'/>
-        {/* Left Content */}
-        <div className="md:hidden w-full mx-auto flex flex-col sm:mt-36 mt-15 mb-0 c-space z-10">
-            <p className="orbitron-font  text-[clamp(70px,8vw,190px)] font-bold opacity-70 text-center tracking-widest text-purple-300 text-tight">
-            HI I'M MYSHA
-            </p>
+                    <img 
+            src="/assets/stars.png" 
+            alt="background" 
+            className='absolute inset-0 w-full h-full object-cover z-0'
+            />
 
-            <p className="text-center sm:mt-0 text-white/70 text-lg tracking-wide font-light">
-            Full Stack Developer & CS Student
-            </p>
-            <a href="/assets/Mysha.pdf" target="_blank" rel="noopener noreferrer">
-            <button className="w-32 m-40 bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded-full mt-2 ">
-                Resume
-            </button>
-            </a>
-        </div>
+            {/* Hero Content — centered on all breakpoints, transparent to pointer events except the button */}
+            <div className="absolute inset-0 z-10 flex items-center justify-center pointer-events-none px-4">
+            <div className="flex flex-col items-center text-center">
 
-        {/* Tablet & Desktop */}
-        <div className="hidden md:flex absolute inset-0 z-10 items-center pointer-events-none">
-            <div className="w-1/2 pl-20 lg:pl-32 pb-15 flex flex-col justify-center pointer-events-auto">
-            <h1 className="orbitron-font text-3xl lg:text-9xl font-bold text-white">
+                {/* Mobile heading */}
+                <p className="md:hidden orbitron-font text-[clamp(80px,8vw,190px)] font-bold opacity-70 text-purple-600 tracking-widest leading-none">
+                HI I'M MYSHA
+                </p>
+
+                {/* Desktop heading */}
+                <h1 className="hidden md:block orbitron-font text-6xl lg:text-6xl font-bold text-white leading-none">
                 HI I'M
-            </h1>
-            <h1 className="orbitron-font text-7xl lg:text-9xl font-bold text-purple-500">
-                MYSHA
-            </h1>
-            <p className="text-white/70 text-2xl mt-4">
-                Full Stack Developer & CS Student
-            </p>
-            <a href="/assets/Mysha.pdf" target="_blank" rel="noopener nonreferrer">
-            <button className="w-32 bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded-full mt-4 ">
-                Resume
-            </button>
-            </a>
+                </h1>
+                <h1 className="hidden md:block orbitron-font text-7xl lg:text-[7rem] font-bold text-white drop-shadow-[0_0_25px_rgba(168,85,247,0.45)] leading-none mt-2">
+                MYSHA ZESHAN
+                </h1>
+
+                <p className="max-w-3xl text-white/70 text-lg md:text-xl lg:text-2xl mt-4 md:mt-6 tracking-wide font-light">
+                Computer Science student specializing in full-stack development, crafting modern web applications with clean code and intuitive user experiences.
+                </p>
+
+                
+                <a href="/assets/Mysha.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-8 pointer-events-auto"
+                >
+                <button className="px-8 py-3 rounded-full
+                bg-gradient-to-r
+                from-purple-500
+                to-fuchsia-500
+                hover:scale-105
+                transition-all
+                duration-300
+                shadow-[0_0_35px_rgba(168,85,247,0.45)] text-white">
+                    Resume
+                </button>
+                </a>
+
             </div>
-            
-        </div>
+            </div>
 
         <div className="w-full h-full absolute inset-0">
            
          <Canvas className='w-full h-full absolute inset-0'>
             <Suspense fallback={<CanvasLoader/>}>
-            <PerspectiveCamera makeDefault position={[0, 0, 18]} />
-            <Stars radius={100} depth={50} count={3000} factor={2} saturation={0.5} fade speed={1} /> 
-            <Model position={sizes.targetPosition} scale={sizes.targetScale} rotation={sizes.rotation}/>
-            <ambientLight intensity={1} />
-            <directionalLight position={[10, 10, 10]} intensity={0.5}/>
+            <PerspectiveCamera makeDefault position={[0, 0, 15]} />
+            <InteractiveStars/>
+            <ambientLight />
             </Suspense>
             
         </Canvas>
