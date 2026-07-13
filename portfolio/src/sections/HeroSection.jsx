@@ -19,7 +19,7 @@ const HeroSection = () => {
     const sizes = calculateSizes(small, isMobile, isTablet)
   return (
     <section className='min-h-screen w-full flex flex-col relative' id="home">
-                    <img 
+            <img 
             src="/assets/stars.png" 
             alt="background" 
             className='absolute inset-0 w-full h-full object-cover z-0'
@@ -38,7 +38,7 @@ const HeroSection = () => {
                 <h1 className="hidden md:block orbitron-font text-6xl lg:text-6xl font-bold text-white leading-none">
                 HI I'M
                 </h1>
-                <h1 className="hidden md:block orbitron-font text-7xl lg:text-[7rem] font-bold text-white drop-shadow-[0_0_25px_rgba(168,85,247,0.45)] leading-none mt-2">
+                <h1 className="hidden md:block orbitron-font text-7xl lg:text-[7rem] font-bold text-purple-300 drop-shadow-[0_0_25px_rgba(168,85,247,0.45)] leading-none mt-2">
                 MYSHA ZESHAN
                 </h1>
 
@@ -47,22 +47,32 @@ const HeroSection = () => {
                 </p>
 
                 
-                <a href="/assets/Mysha.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-8 pointer-events-auto"
-                >
-                <button className="px-8 py-3 rounded-full
-                bg-gradient-to-r
-                from-purple-500
-                to-fuchsia-500
-                hover:scale-105
-                transition-all
-                duration-300
-                shadow-[0_0_35px_rgba(168,85,247,0.45)] text-white">
-                    Resume
-                </button>
+                <div className="flex gap-4 items-center justify-center mt-5">
+                <a href="/assets/Mysha.pdf" target="_blank" rel="noopener noreferrer" className="pointer-events-auto">
+                    <button className="px-8 py-3 rounded-full
+                        bg-gradient-to-r
+                        from-purple-500
+                        to-fuchsia-500
+                        hover:scale-105
+                        transition-all
+                        duration-300
+                        shadow-[0_0_35px_rgba(168,85,247,0.45)] text-white">
+                        Resume
+                    </button>
                 </a>
+                <a  href="#contact" className="pointer-events-auto">
+                    <button className="px-8 py-3 rounded-full
+                        bg-gradient-to-r
+                        from-purple-500
+                        to-fuchsia-500
+                        hover:scale-105
+                        transition-all
+                        duration-300
+                        shadow-[0_0_35px_rgba(168,85,247,0.45)] text-white">
+                        Contact
+                    </button>
+                </a>
+            </div>
 
             </div>
             </div>
