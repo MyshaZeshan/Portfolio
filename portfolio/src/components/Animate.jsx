@@ -29,7 +29,7 @@ const AnimatedComputer = () => {
     <group
       ref={group}
       scale={1.1}
-      position={[0.5, 0, 0]}
+      position={[0.8, 0.1, 0]}
       onPointerMove={handlePointerMove}
     >
       <Computer />

@@ -3,7 +3,7 @@ export const skills = [
     id: "01",
     title: "Frontend Development",
     subtitle: "Responsive & Interactive UI",
-    level: 90,
+    level: 80,
     color: "cyan",
     tags: ["React", "Tailwind", "JavaScript", "CSS", "HTML"]
   },
@@ -19,7 +19,7 @@ export const skills = [
     id: "03",
     title: "Java Development",
     subtitle: "Backend Services & APIs",
-    level: 80,
+    level: 70,
     color: "purple",
     tags: ["Java", "Spring Boot", "MySQL"]
   },
@@ -35,7 +35,7 @@ export const skills = [
     id: "05",
     title: "3D Web Development",
     subtitle: "Interactive Experiences",
-    level: 78,
+    level: 70,
     color: "orange",
     tags: ["Three.js", "React Three Fiber", "GLTF"]
   },
@@ -43,15 +43,15 @@ export const skills = [
     id: "06",
     title: "DevOps",
     subtitle: "Deployment & Automation",
-    level: 62,
+    level: 60,
     color: "green",
-    tags: ["Docker", "Git", "Linux"]
+    tags: ["Github", "Git"]
   },
   {
     id: "07",
     title: "Database Management",
     subtitle: "Efficient Data Handling",
-    level: 82,
+    level: 75,
     color: "indigo",
     tags: ["MySQL", "Oracle", "SQLite"]
   },
@@ -59,7 +59,7 @@ export const skills = [
     id: "08",
     title: "Problem Solving",
     subtitle: "Algorithms & DSA",
-    level: 84,
+    level: 50,
     color: "red",
     tags: ["C++", "LeetCode"]
   }

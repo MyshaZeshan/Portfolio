@@ -28,7 +28,7 @@ const HeroSection = () => {
             <div className="flex flex-col items-center text-center">
 
                 {/* Mobile heading */}
-                <p className="md:hidden orbitron-font text-[clamp(80px,8vw,190px)] font-bold opacity-70 text-purple-600 tracking-widest leading-none">
+                <p className="md:hidden orbitron-font text-[clamp(70px,8vw,190px)] font-bold opacity-70 text-purple-600 tracking-widest leading-none">
                 HI I'M MYSHA
                 </p>
 
@@ -40,7 +40,7 @@ const HeroSection = () => {
                 MYSHA ZESHAN
                 </h1>
 
-                <p className="max-w-3xl text-white/70 text-lg md:text-xl lg:text-2xl mt-4 md:mt-6 tracking-wide font-light">
+                <p className="max-w-2xl text-white/70 text-lg md:text-xl lg:text-2xl mt-4 md:mt-6 tracking-wide font-light">
                 Computer Science student specializing in full-stack development, crafting modern web applications with clean code and intuitive user experiences.
                 </p>
 
