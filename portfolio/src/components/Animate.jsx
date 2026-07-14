@@ -1,9 +1,14 @@
 import React, { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import Computer from "./Computer.jsx";
+import {calculateSizes} from '../utils/CalculatrSizes.jsx';
+import { useMediaQuery } from "react-responsive";
 
 const AnimatedComputer = () => {
   const group = useRef();
+  const isSmall = useMediaQuery({ maxWidth: 440 });
+  const isMobile = useMediaQuery({ maxWidth: 768 });
+  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 });
 
   const targetRotation = useRef({
     x: 0,
@@ -28,8 +33,8 @@ const AnimatedComputer = () => {
   return (
     <group
       ref={group}
-      scale={1.1}
-      position={[0.8, 0.1, 0]}
+      scale={calculateSizes(isSmall, isMobile, isTablet).targetScales}
+      position={calculateSizes(isSmall, isMobile, isTablet).targetPositions}
       onPointerMove={handlePointerMove}
     >
       <Computer />
