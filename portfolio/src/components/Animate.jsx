@@ -10,8 +10,7 @@ const AnimatedComputer = () => {
   const isSmall = useMediaQuery({ maxWidth: 440 });
   const isMobile = useMediaQuery({ maxWidth: 768 });
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 });
-  console.log({ isXSmall, isSmall, isMobile, isTablet, width: window.innerWidth });
-
+  
   const targetRotation = useRef({
     x: 0,
     y: 0,

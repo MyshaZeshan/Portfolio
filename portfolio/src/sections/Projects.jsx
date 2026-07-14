@@ -70,9 +70,7 @@ const Projects = () => {
             <directionalLight position={[10, 10, 5]} intensity={1.5} />
 
             <Suspense fallback={<CanvasLoader />}>
-                <Center>
                 <AnimatedComputer />
-                </Center>
             </Suspense>
             </Canvas>
         </div>
