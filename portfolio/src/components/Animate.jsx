@@ -6,6 +6,7 @@ import { useMediaQuery } from "react-responsive";
 
 const AnimatedComputer = () => {
   const group = useRef();
+  const isXSmall = useMediaQuery({ maxWidth: 380 });
   const isSmall = useMediaQuery({ maxWidth: 440 });
   const isMobile = useMediaQuery({ maxWidth: 768 });
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 });
@@ -33,8 +34,8 @@ const AnimatedComputer = () => {
   return (
     <group
       ref={group}
-      scale={calculateSizes(isSmall, isMobile, isTablet).targetScales}
-      position={calculateSizes(isSmall, isMobile, isTablet).targetPositions}
+      scale={calculateSizes(isXSmall, isSmall, isMobile, isTablet).targetScales}
+      position={calculateSizes(isXSmall, isSmall, isMobile, isTablet).targetPositions}
       onPointerMove={handlePointerMove}
     >
       <Computer />
