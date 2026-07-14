@@ -1,13 +1,11 @@
 import React from 'react'
 import {Canvas} from "@react-three/fiber";
 import { PerspectiveCamera } from '@react-three/drei';
-import { Model } from '../components/Model.jsx';
 import CanvasLoader from '../components/CanvasLoader.jsx';
 import { Suspense } from "react";
 import { AmbientLight, DirectionalLight } from 'three';
-import {useMediaQuery} from 'react-responsive'
+import {useMediaQuery} from 'react-responsive';
 import { calculateSizes } from '../utils/CalculatrSizes.jsx';
-import {Stars} from '@react-three/drei'
 import InteractiveStars from '../components/InteractiveStars.jsx';
 
 
