@@ -25,7 +25,7 @@ export const calculateSizes = (isXSmall, isSmall, isMobile, isTablet) => {
       ? [0, -Math.PI / 12, 0]
       : [0, -0.2, 0],
     targetPositions: isXSmall
-      ? [0.1, -3, 0]
+      ? [0, 0, 0]
       :isSmall
       ? [0, -3.5, 0]
       : isMobile
