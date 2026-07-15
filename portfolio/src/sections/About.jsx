@@ -31,7 +31,6 @@ const About = () => {
                     <p className="grid-headtext">Hi I'm Mysha Zeshan</p>
                     </div>
                     <div>
-                        <p className="grid-subtext">Full Stack Developer & CS Student</p>
                         <p className="grid-subtext">
                             Computer Science student and Full Stack Developer passionate about building modern, scalable web applications with React and robust backend technologies.
                         </p>
@@ -101,7 +100,7 @@ const About = () => {
                     <div>
                         <p className="grid-headtext">My Passion</p>
                         <p className="grid-subtext">
-                            I love solving problems and building things through code. Coding isnt my profession it's my profession and I want to be the best at what i want to do.
+                            I love solving problems and building things through code. Coding isnt my profession it's my passion and I want to be the best at what i want to do.
                         </p>
                     </div>
 
