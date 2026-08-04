@@ -159,6 +159,8 @@ body {
     background-color: #1a1a2e;
     border: 1px solid #0e0e10;
   }
+
+  
 }
 
 .waving-hand {
@@ -177,6 +179,7 @@ body {
     rgba(255, 255, 255, 0.000025) 50%,
     rgba(255, 255, 255, 0.025) 100%
   );
+
 }
 
 @keyframes wave-animation {
@@ -188,4 +191,5 @@ body {
   60% { transform: rotate(10deg); }
   70% { transform: rotate(0deg); }
   100% { transform: rotate(0deg); }
+
 }
