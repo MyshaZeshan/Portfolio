@@ -17,76 +17,73 @@ const HeroSection = () => {
     const sizes = calculateSizes(small, isMobile, isTablet)
   return (
     <section className='min-h-screen w-full flex flex-col relative' id="home">
-            <img 
-            src="/assets/stars.png" 
-            alt="background" 
-            className='absolute inset-0 w-full h-full object-cover z-0'
-            />
+    <img 
+    src="/assets/stars.png" 
+    alt="background" 
+    className='absolute inset-0 w-full h-full object-cover z-0'
+    />
 
-            {/* Hero Content — centered on all breakpoints, transparent to pointer events except the button */}
-            <div className="absolute inset-0 z-10 flex items-center justify-center pointer-events-none px-4">
-            <div className="flex flex-col items-center text-center">
+    <div className="absolute inset-0 z-10 flex items-center justify-center pointer-events-none px-4">
+<div className="flex flex-col items-center text-center max-md:items-start max-md:text-left">
 
-                {/* Mobile heading */}
-                <p className="md:hidden orbitron-font text-[clamp(70px,8vw,190px)] font-bold opacity-70 text-purple-600 tracking-widest leading-none">
-                HI I'M MYSHA
-                </p>
+    {/* Mobile heading */}
+    <div className="md:hidden flex flex-col items-start orbitron-font font-bold tracking-widest leading-[0.9] pl-2">
+    <span className="text-[clamp(40px,11vw,80px)] text-white opacity-80">HI I'M</span>
+    <span className="text-[clamp(55px,15vw,120px)] text-white drop-shadow-[0_0_25px_rgba(168,85,247,0.45)]">
+        MYSHA
+    </span>
+    </div>
 
-                {/* Desktop heading */}
-                <h1 className="hidden md:block orbitron-font text-6xl lg:text-6xl font-bold text-white leading-none">
-                HI I'M
-                </h1>
-                <h1 className="hidden md:block orbitron-font text-7xl lg:text-[7rem] font-bold text-purple-300 drop-shadow-[0_0_25px_rgba(168,85,247,0.45)] leading-none mt-2">
-                MYSHA ZESHAN
-                </h1>
+    {/* Desktop heading */}
+    <h1 className="hidden md:block orbitron-font text-6xl lg:text-6xl font-bold text-white/90 leading-none tracking-wide">
+    HI I'M
+    </h1>
+    <h1 className="hidden md:block orbitron-font text-7xl lg:text-[7rem] font-bold bg-gradient-to-r text-white via-fuchsia-100 to-purple-100 bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(168,85,247,0.45)] leading-none mt-2">
+    MYSHA ZESHAN
+    </h1>
 
-                <p className="max-w-2xl text-white/70 text-lg md:text-xl lg:text-2xl mt-4 md:mt-6 tracking-wide font-light">
-                Computer Science student specializing in full-stack development, crafting modern web applications with clean code and intuitive user experiences.
-                </p>
+    <p className="max-w-2xl text-white/70 text-lg md:text-xl lg:text-2xl mt-4 md:mt-6 tracking-wide font-light max-md:pl-2">
+    Computer Science student specializing in full-stack development, crafting modern web applications with clean code and intuitive user experiences.
+    </p>
 
-                
-                <div className="flex gap-4 items-center justify-center mt-5">
-                <a href="/assets/Mysha.pdf" target="_blank" rel="noopener noreferrer" className="pointer-events-auto">
-                    <button className="px-8 py-3 rounded-full
-                        bg-gradient-to-r
-                        from-purple-500
-                        to-fuchsia-500
-                        hover:scale-105
-                        transition-all
-                        duration-300
-                        shadow-[0_0_35px_rgba(168,85,247,0.45)] text-white">
-                        Resume
-                    </button>
-                </a>
-                <a  href="#contact" className="pointer-events-auto">
-                    <button className="px-8 py-3 rounded-full
-                        bg-gradient-to-r
-                        from-purple-500
-                        to-fuchsia-500
-                        hover:scale-105
-                        transition-all
-                        duration-300
-                        shadow-[0_0_35px_rgba(168,85,247,0.45)] text-white">
-                        Contact
-                    </button>
-                </a>
-            </div>
+    <div className="flex gap-4 items-center mt-8 max-md:pl-2 md:justify-center">
+    <a href="/assets/Mysha.pdf" target="_blank" rel="noopener noreferrer" className="pointer-events-auto">
+        <button className="px-8 py-3 rounded-full
+            border border-white/30
+            bg-white/5 backdrop-blur-sm
+            hover:bg-white/10 hover:border-white/50 hover:scale-105
+            transition-all duration-300
+            text-white font-medium tracking-wide">
+        Resume
+        </button>
+    </a>
+    <a href="#projects" className="pointer-events-auto">
+        <button className="px-8 py-3 rounded-full
+            border border-white/30
+            bg-white/5 backdrop-blur-sm
+            hover:bg-white/10 hover:border-white/50 hover:scale-105
+            transition-all duration-300
+            text-white font-medium tracking-wide">
+        Projects
+        </button>
+    </a>
+    </div>
 
-            </div>
-            </div>
+</div>
+</div>
 
-        <div className="w-full h-full absolute inset-0">
-           
-         <Canvas className='w-full h-full absolute inset-0'>
-            <Suspense fallback={<CanvasLoader/>}>
-            <PerspectiveCamera makeDefault position={[0, 0, 15]} />
-            <InteractiveStars/>
-            <ambientLight />
-            </Suspense>
-            
-        </Canvas>
-        </div>
-    </section>
+    <div className="w-full h-full absolute inset-0">
+       
+     <Canvas className='w-full h-full absolute inset-0'>
+        <Suspense fallback={<CanvasLoader/>}>
+        <PerspectiveCamera makeDefault position={[0, 0, 15]} />
+        <InteractiveStars/>
+        <ambientLight />
+        </Suspense>
+        
+    </Canvas>
+    </div>
+</section>
   )
 }
 
